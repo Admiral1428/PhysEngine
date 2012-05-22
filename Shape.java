@@ -1,13 +1,16 @@
-import java.util.*;
-
 public abstract class Shape
 {
-   private double mass = 0;  //Defines the mass of the shape in kilograms
-   private double velo = 0;  //Defines the velocity of the shape in meters per second
-   private double angle = 0; //Defines the angle of the vector in RADIANS
-   private double accl = 0;  //Defiens the acceleration of the shape in meters per second sqaured
-   private double xPos = 0;  //Defines the X-Coordinate of the shape at its Center (by pixel)
-   private double yPos = 0;  //Defines the Y-Coordinate of the shape at its Center (by pixel)
+   private double mass;  //Defines the mass of the shape in kilograms
+   private double velo;  //Defines the velocity of the shape in meters per second
+   private double angle; //Defines the angle of the vector in RADIANS
+   private double accl;  //Defiens the acceleration of the shape in meters per second sqaured
+   private double xPos;  //Defines the X-Coordinate of the shape at its Center (by pixel)
+   private double yPos;  //Defines the Y-Coordinate of the shape at its Center (by pixel)
+   
+   public Shape()
+   {
+	   mass = velo = angle = accl = xPos = yPos= 0;
+   }
 
    public Shape (double pMass, double pVelo, double pAngle, double pAccl, double pXPos, double pYPos)
    {
@@ -69,11 +72,4 @@ public abstract class Shape
    {
 	  return (pVelo * Math.cos(pAngle));
    }
-
-   public abstract double getPerimeter();
-
-   public abstract double getArea();
-
-   public abstract double getDensity();      //ALL to be overriden later
-
 }
